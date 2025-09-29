@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Alanove Portfolio
 
 A modern, responsive portfolio website showcasing my skills, projects, and experience as a Full Stack Developer.
@@ -203,3 +204,6 @@ This project is open source and available under the [MIT License](LICENSE).
 ---
 
 ⭐ **If you found this portfolio template helpful, please give it a star!** ⭐
+=======
+# Alanove
+>>>>>>> 47318ed203532b14e146a66906801719f55b7652
