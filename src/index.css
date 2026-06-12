@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Resets & Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  background-color: #041A1C;
+  font-family: 'Kanit', sans-serif;
+  color: #D7E2EA;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+/* Custom Hero Heading Gradient Text */
+.hero-heading {
+  background: linear-gradient(180deg, #ffffff 0%, #cce3e6 35%, #6BA3A3 75%, #167A8A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.liquid-glass-text {
+  filter: url(#text-liquid-lens) drop-shadow(0 2px 4px rgba(22, 122, 138, 0.3));
+  text-shadow: 0 0 10px rgba(107, 163, 163, 0.15);
+}
+
+.hero-name {
+  font-size: 1.25rem;
+}
+@media (min-width: 640px) {
+  .hero-name {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .hero-name {
+    font-size: 5vw;
+  }
+}
+
+.hero-bazil {
+  font-size: 1.125rem;
+}
+@media (min-width: 640px) {
+  .hero-bazil {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 768px) {
+  .hero-bazil {
+    font-size: 4vw;
+  }
+}
+
+/* Liquid Glass (Glassmorphism) */
+.liquid-glass {
+  background: rgba(10, 46, 54, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(22, 122, 138, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* Cyber Grid Background style */
+.cyber-grid {
+  background-image: 
+    radial-gradient(rgba(22, 122, 138, 0.08) 1.5px, transparent 1.5px);
+  background-size: 32px 32px;
+}
+
+/* Floating background glow animations */
+@keyframes blob-float-one {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(60px, -80px) scale(1.15);
+  }
+  66% {
+    transform: translate(-40px, 40px) scale(0.9);
+  }
+}
+
+@keyframes blob-float-two {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1.1);
+  }
+  50% {
+    transform: translate(-70px, 90px) scale(0.9);
+  }
+}
+
+.animate-blob-1 {
+  animation: blob-float-one 22s infinite ease-in-out;
+}
+
+.animate-blob-2 {
+  animation: blob-float-two 28s infinite ease-in-out;
+}
+
+/* Liquid Glass Refraction & Lens Distortion */
+.liquid-lens {
+  filter: url(#mini-liquid-lens);
+}
+
+.hover-liquid-lens {
+  transition: filter 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+}
+
+.hover-liquid-lens:hover {
+  filter: url(#mini-liquid-lens);
+}
+
+/* Liquid Goo effect */
+.liquid-goo {
+  filter: url(#goo);
+}
+
+/* Liquid Glass Background Wrapper */
+.liquid-bg-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  overflow: hidden;
+  background-color: #041A1C;
+}
+
+/* Glass Panel Style */
+.glass-panel {
+  position: relative;
+  isolation: isolate;
+  border-radius: 30px;
+}
+
+.glass-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  border-radius: inherit;
+  box-shadow: inset 2px 2px 0px -2px rgba(255, 255, 255, 0.4), inset 0 0 3px 1px rgba(255, 255, 255, 0.2);
+  background-color: rgba(10, 46, 54, 0.45);
+}
+
+.glass-panel::after {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  border-radius: inherit;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  filter: url(#container-glass);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Liquid Pill Button Style */
+.liquid-pill-btn {
+  position: relative;
+  cursor: pointer;
+  background: transparent;
+  outline: none;
+  border: none;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+}
+
+.liquid-pill-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.liquid-pill-btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.liquid-pill-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.1);
+  background-color: rgba(30, 35, 40, 0.4);
+}
+
+.liquid-pill-btn::after {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  border-radius: inherit;
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Portrait Height Adjustments for Mobile PC Emulation */
+@media (orientation: portrait) {
+  .hero-container {
+    min-height: 460px !important;
+    height: 460px !important;
+  }
+  .about-container {
+    min-height: auto !important;
+    height: auto !important;
+  }
+}
