@@ -63,10 +63,10 @@ export const HeroSection: React.FC = () => {
         {/* Left Side: Name and Stats Card */}
         <div className="w-7/12 md:w-1/2 flex flex-col items-start gap-4 md:gap-8 select-none text-left">
           <FadeIn delay={0.2} duration={1} y={40} className="w-full pointer-events-auto">
-            <h1 className="hero-name hero-heading liquid-glass-text font-black uppercase leading-none tracking-tighter">
+            <h1 className="hero-name hero-heading liquid-glass-text font-black uppercase leading-none tracking-tighter pl-6 -ml-6">
               ALANOVE JENNY
             </h1>
-            <h2 className="hero-bazil liquid-glass-text font-black uppercase leading-none tracking-tighter mt-1 text-transparent [-webkit-text-stroke:1px_rgba(107,163,163,0.5)] md:[-webkit-text-stroke:1.5px_rgba(107,163,163,0.5)] hover:text-[#6BA3A3]/10 hover:[-webkit-text-stroke-color:#BBCCD7] transition-all duration-500 ease-out select-none">
+            <h2 className="hero-bazil liquid-glass-text font-black uppercase leading-none tracking-tighter mt-1 text-transparent [-webkit-text-stroke:1px_rgba(107,163,163,0.5)] md:[-webkit-text-stroke:1.5px_rgba(107,163,163,0.5)] hover:text-[#6BA3A3]/10 hover:[-webkit-text-stroke-color:#BBCCD7] transition-all duration-500 ease-out select-none pl-6 -ml-6">
               BAZIL
             </h2>
             <p className="text-[#D7E2EA] tracking-widest uppercase mt-2 font-medium text-[10px] sm:text-xs md:text-base">

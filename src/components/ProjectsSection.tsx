@@ -18,13 +18,13 @@ interface ProjectCardData {
 
 const ProjectCard: React.FC<{ project: ProjectCardData; index: number; range: number[]; targetScale: number; progress: any }> = ({ project, index, range, targetScale, progress }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  
+
   // Calculate scaling for stacked effect
   const scale = useTransform(progress, range, [1, targetScale]);
 
   return (
-    <div 
-      ref={containerRef} 
+    <div
+      ref={containerRef}
       className="sticky top-[80px] w-full min-h-[550px] sm:min-h-[650px] md:min-h-[750px] flex items-center justify-center pb-12 z-20"
     >
       <motion.div
@@ -69,21 +69,21 @@ const ProjectCard: React.FC<{ project: ProjectCardData; index: number; range: nu
                 </div>
               ))}
             </div>
-            
+
             {/* Two Stacked Images */}
             <div className="grid grid-cols-2 gap-4 flex-grow min-h-[160px] sm:min-h-[220px]">
               <div className="rounded-2xl overflow-hidden border border-primary/20 bg-darkBg">
-                <img 
-                  src={project.leftTopImage} 
-                  alt="Detail top" 
+                <img
+                  src={project.leftTopImage}
+                  alt="Detail top"
                   className="w-full h-full object-cover hover:scale-[1.03] transition-all duration-700 ease-out"
                   loading="lazy"
                 />
               </div>
               <div className="rounded-2xl overflow-hidden border border-primary/20 bg-darkBg">
-                <img 
-                  src={project.leftBottomImage} 
-                  alt="Detail bottom" 
+                <img
+                  src={project.leftBottomImage}
+                  alt="Detail bottom"
                   className="w-full h-full object-cover hover:scale-[1.03] transition-all duration-700 ease-out"
                   loading="lazy"
                 />
@@ -97,9 +97,9 @@ const ProjectCard: React.FC<{ project: ProjectCardData; index: number; range: nu
 
           {/* Right Column: Tall Image */}
           <div className="md:col-span-7 rounded-2xl overflow-hidden border border-primary/20 bg-darkBg min-h-[240px] sm:min-h-[300px]">
-            <img 
-              src={project.rightTallImage} 
-              alt="Main showcase" 
+            <img
+              src={project.rightTallImage}
+              alt="Main showcase"
               className="w-full h-full object-cover hover:scale-[1.02] transition-all duration-700 ease-out"
               loading="lazy"
             />
@@ -160,7 +160,7 @@ export const ProjectsSection: React.FC = () => {
       description: 'A clean showcase portal featuring product mockup templates, logo design collections, and digital branding assets for modern corporate setups.',
       leftTopImage: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=400&q=80',
       leftBottomImage: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=400&q=80',
-      rightTallImage: '/nexadesigns.jpg',
+      rightTallImage: '/nexadesigns.png',
       color: 'rgba(10, 46, 54, 0.95)',
       specs: [
         { label: 'UI Toolkit', value: 'Shadcn UI' },
@@ -203,7 +203,7 @@ export const ProjectsSection: React.FC = () => {
   ];
 
   return (
-    <section 
+    <section
       ref={containerRef}
       id="projects"
       className="relative w-full rounded-t-[40px] md:rounded-t-[80px] -mt-[40px] md:-mt-[80px] px-6 py-20 md:px-12 md:py-32 z-40 overflow-visible border-t border-primary/20"
@@ -229,7 +229,7 @@ export const ProjectsSection: React.FC = () => {
             const startVal = index / projects.length;
             const endVal = (index + 1) / projects.length;
             return (
-              <ProjectCard 
+              <ProjectCard
                 key={project.id}
                 project={project}
                 index={index}

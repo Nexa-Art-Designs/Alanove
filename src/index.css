@@ -30,8 +30,7 @@ body,
 }
 
 .liquid-glass-text {
-  filter: url(#text-liquid-lens) drop-shadow(0 2px 4px rgba(22, 122, 138, 0.3));
-  text-shadow: 0 0 10px rgba(107, 163, 163, 0.15);
+  filter: drop-shadow(0 2px 4px rgba(22, 122, 138, 0.35)) drop-shadow(0 0 10px rgba(107, 163, 163, 0.25));
 }
 
 .hero-name {
